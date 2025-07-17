@@ -54,5 +54,7 @@ console.table([valBoolean, Boolean(valBoolean)]);
 //null => false
 //undefined => false
 
-
-
+//************* OPEARTIONS *************/
+console.log(+true); //1
+//console.log(true+); //error
+console.log(+""); //0
