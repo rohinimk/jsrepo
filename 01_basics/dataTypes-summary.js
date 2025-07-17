@@ -19,6 +19,7 @@ console.log(anotherId);
 
 //Array, Objects, Functions
 
+/*
 const heros = ["shaktimaan", "naagraj", "doga"]
 let myObj = {
         name: "rohini",
@@ -33,6 +34,15 @@ console.log(typeof myFunction); //function type but it is called as object funct
 console.log(typeof(myObj));
 console.log(typeof null); //typeof null is object
 console.log(typeof undefinedll); //typeof null is undefined
+*/
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++
+
+//Two types of momories - Stack, Heap
+
+//1. Stack (primitive)- 
+
+//2. Heap (Non-primitive)-
 
 
 
