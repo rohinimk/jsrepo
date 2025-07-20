@@ -58,6 +58,19 @@ console.log(Object.entries(tinderUser)); //every key value is returned as an arr
 console.log(tinderUser.hasOwnProperty('isLoggedIn'));
 */
 
+const course = {
+    courseName : "javascript",
+    price: "999",
+    courseInstructor : "james"
+}
+
+////Destructuring
+//course.courseInstructor
+
+const {courseInstructor} = course
+const {courseInstructor : instructor} = course
+console.log(courseInstructor);
+console.log(instructor);
 
 
 
