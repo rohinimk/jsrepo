@@ -5,42 +5,32 @@
 
 # Solution Code
 
-## Project1
+## Project1 Solution
+## Project2 Solution
 
 ```Javascript
-const buttons = document.querySelectorAll('.button');
-const body = document.querySelector('body');
+const form = document.querySelector('form');
 
-buttons.forEach((button) => {
-  console.log(button);
-  button.addEventListener('click',function(e){
-    //console.log(e);    
-    //console.log(e.target.id);
-    
-    /*
-    switch(e.target.id){
-      case "grey":
-        body.style.backgroundColor = "grey";
-        break;
+//this use case will give you empty value. The value will be filled up as soon as the page loads. We want values whenwe submit / click the button
+//const height = parseInt(document.querySelector('#height').value);
 
-      case "white":
-        body.style.backgroundColor = e.target.id;
-        break;        
-      
-      case "blue":
-        body.style.backgroundColor = e.target.id;
-        break;
+form.addEventListener('submit', function(e) {
+  e.preventDefault();
 
-      case "yellow":
-        body.style.backgroundColor = e.target.id;
-        break;
+  const height = parseInt(document.querySelector('#height').value);
+  const weight = parseInt(document.querySelector('#weight').value);
+  const result = document.querySelector('#results');
 
-      default:
-        body.style.backgroundColor = e.target.id;
-        break;
-    }
-    */
-    body.style.backgroundColor = e.target.id;    
-  })
+  if(height === '' || height < 0 || isNaN(height)){
+    result.innerHTML = "Please enter a valid height\n";
+  } else if(weight === '' || weight < 0 || isNaN(weight)){
+    result.innerHTML += "Please enter a valid weight";
+  } else {
+    const bmi = (weight / ((height * height) / 1000)).toFixed(2);
+    let bodyweight = 'Overweight';
+    if(bmi < 18.6) bodyweight = "Under Weight";
+    else if(bmi <= 24.9) bodyweight = 'Normal Range';
+    result.innerHTML = `<span>BMIS is : ${bmi} and you are ${bodyweight}</span>`;
+  }
 });
 ```
