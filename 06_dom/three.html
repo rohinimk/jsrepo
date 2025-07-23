@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    
+</body>
+<script>
+    const div = document.createElement('div');
+    div.className = 'Main';
+    div.id = Math.round(Math.random() * 10 + 1);
+    div.setAttribute("title","generated titel");
+    div.style.background = "green";
+    div.style.padding = "10px";
+    //div.innerHTML = "Test Test";
+    const textNode = document.createTextNode("Test Test");
+    div.appendChild(textNode);
+    document.body.appendChild(div);
+    //document.appendChild(div);
+</script>    
+</html>
