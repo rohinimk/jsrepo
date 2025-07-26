@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Javascript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const startMe = setInterval((name) => {
+        console.log('start work: ', name);        
+    }, 1000, 'rohini');
+
+
+    document.querySelector('#start').addEventListener('click',function(e){
+        startMe;
+    });
+
+    document.querySelector('#stop').addEventListener('click',function(e){
+        clearInterval(startMe);
+    });
+</script>
+</html>

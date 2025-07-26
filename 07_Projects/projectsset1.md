@@ -180,3 +180,64 @@ function newGame(){
   });  
 }
 ````
+
+## Project 5 Solution Code
+
+```Javascript
+console.log('Project 5');
+
+const insert = document.getElementById('insert');
+
+window.addEventListener('keydown', (e) => {
+  insert.innerHTML = `
+    <div class='color'>
+      <table>
+      <tr>
+        <th>Key</th>
+        <th>KeyCode</th>
+        <th>Code</th>
+      </tr>
+      <tr>
+        <td>${e.key === " " ? "Space" : e.key}</td>
+        <td>${e.keyCode}</td>
+        <td>${e.code}</td>
+      </tr>
+    </table>
+  </div>
+  `;
+})
+
+```
+
+## Project 6 Solution Code
+
+``` Javascript
+function getRandomColor() {
+  var letters = '0123456789ABCDEF';
+  var color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
+let intervalId;
+
+const setColor = function() {
+  if(!intervalId){
+    intervalId = setInterval(() => {
+      document.body.style.backgroundColor = getRandomColor();
+    },1000)
+  }
+}
+
+document.querySelector('#start').addEventListener('click',function () { setColor()});
+
+document.querySelector('#stop').addEventListener('click', function () { stopColor()}); 
+
+const stopColor = function() {
+  clearInterval(intervalId);
+  intervalId = null;
+}
+
+```
