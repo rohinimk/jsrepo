@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121;">
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+</body>
+<script>
+
+    function clickHandler(color){
+
+        return function(){
+            document.body.style.backgroundColor = `${color}`;
+        }    
+   }
+
+   document.getElementById('orange').onclick = clickHandler('orange');
+   document.getElementById('green').onclick = clickHandler('green');
+
+   
+   //this won't work because you are executing the function immediately. So the background color changes without clicking the the button
+   document.getElementById('orange').onclick = clickHandler('orange');
+   document.getElementById('green').onclick = clickHandler('green');
+
+    //Lexical scoping
+    /* function outer(){
+        let userName = 'Sassy';
+
+        function inner(){
+            let secret = "sec123";
+            console.log("inner username is: ", userName);            
+        }
+
+        function innerTwo(){
+            console.log("innerTwo username is: ", userName); 
+           //console.log(secret);
+        }
+        inner();
+        innerTwo();
+    }
+    //console.log("Outer : ", username);    
+    outer(); */
+
+   /*  //closure
+    function makeFunc(){
+        const name = "Mozilla";
+        function displayName(){
+            console.log(name);;            
+        }        
+        return displayName;
+    }
+
+    const myFunc = makeFunc();
+    myFunc(); */
+
+    /* document.getElementById('orange').onclick = function(){
+        document.body.style.backgroundColor = 'orange';
+    }
+
+    document.getElementById('green').onclick = function(){
+        document.body.style.backgroundColor = 'green';
+    } */
+
+  /*
+   function clickHandler(color){
+    document.body.style.backgroundColor = `${color}`    ;
+   }
+
+   document.getElementById('orange').onclick = clickHandler('orange');
+   document.getElementById('green').onclick = clickHandler('green');
+
+   
+   //this won't work because you are executing the function immediately. So the background color changes without clicking the the button
+   document.getElementById('orange').onclick = clickHandler('orange');
+   document.getElementById('green').onclick = clickHandler('green');*/
+</script>
+</html>
